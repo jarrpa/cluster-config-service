@@ -23,6 +23,13 @@ import (
 
 	"github.com/spf13/cobra"
 
+	"github.com/jarrpa/cluster-config-service/pkg/admission/plugin/banflunder"
+	"github.com/jarrpa/cluster-config-service/pkg/admission/wardleinitializer"
+	"github.com/jarrpa/cluster-config-service/pkg/apis/wardle/v1alpha1"
+	"github.com/jarrpa/cluster-config-service/pkg/apiserver"
+	clientset "github.com/jarrpa/cluster-config-service/pkg/generated/clientset/versioned"
+	informers "github.com/jarrpa/cluster-config-service/pkg/generated/informers/externalversions"
+	sampleopenapi "github.com/jarrpa/cluster-config-service/pkg/generated/openapi"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	utilerrors "k8s.io/apimachinery/pkg/util/errors"
@@ -32,13 +39,6 @@ import (
 	genericapiserver "k8s.io/apiserver/pkg/server"
 	genericoptions "k8s.io/apiserver/pkg/server/options"
 	utilfeature "k8s.io/apiserver/pkg/util/feature"
-	"k8s.io/sample-apiserver/pkg/admission/plugin/banflunder"
-	"k8s.io/sample-apiserver/pkg/admission/wardleinitializer"
-	"k8s.io/sample-apiserver/pkg/apis/wardle/v1alpha1"
-	"k8s.io/sample-apiserver/pkg/apiserver"
-	clientset "k8s.io/sample-apiserver/pkg/generated/clientset/versioned"
-	informers "k8s.io/sample-apiserver/pkg/generated/informers/externalversions"
-	sampleopenapi "k8s.io/sample-apiserver/pkg/generated/openapi"
 	netutils "k8s.io/utils/net"
 )
 

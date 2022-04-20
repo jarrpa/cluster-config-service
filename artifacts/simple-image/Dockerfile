@@ -13,5 +13,5 @@
 # limitations under the License.
 
 FROM fedora
-ADD kube-sample-apiserver /
-ENTRYPOINT ["/kube-sample-apiserver"]
+ADD cluster-config-service /
+ENTRYPOINT ["/cluster-config-service"]

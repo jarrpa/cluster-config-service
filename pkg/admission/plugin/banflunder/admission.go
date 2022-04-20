@@ -21,14 +21,14 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/jarrpa/cluster-config-service/pkg/admission/wardleinitializer"
+	"github.com/jarrpa/cluster-config-service/pkg/apis/wardle"
+	informers "github.com/jarrpa/cluster-config-service/pkg/generated/informers/externalversions"
+	listers "github.com/jarrpa/cluster-config-service/pkg/generated/listers/wardle/v1alpha1"
 	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/api/meta"
 	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/apiserver/pkg/admission"
-	"k8s.io/sample-apiserver/pkg/admission/wardleinitializer"
-	"k8s.io/sample-apiserver/pkg/apis/wardle"
-	informers "k8s.io/sample-apiserver/pkg/generated/informers/externalversions"
-	listers "k8s.io/sample-apiserver/pkg/generated/listers/wardle/v1alpha1"
 )
 
 // Register registers a plugin

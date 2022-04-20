@@ -22,11 +22,11 @@ limitations under the License.
 package v1alpha1
 
 import (
+	wardle "github.com/jarrpa/cluster-config-service/pkg/apis/wardle"
 	unsafe "unsafe"
 
 	conversion "k8s.io/apimachinery/pkg/conversion"
 	runtime "k8s.io/apimachinery/pkg/runtime"
-	wardle "k8s.io/sample-apiserver/pkg/apis/wardle"
 )
 
 func init() {
@@ -219,14 +219,14 @@ func Convert_wardle_FlunderList_To_v1alpha1_FlunderList(in *wardle.FlunderList, 
 
 func autoConvert_v1alpha1_FlunderSpec_To_wardle_FlunderSpec(in *FlunderSpec, out *wardle.FlunderSpec, s conversion.Scope) error {
 	// WARNING: in.Reference requires manual conversion: does not exist in peer-type
-	// WARNING: in.ReferenceType requires manual conversion: inconvertible types (*k8s.io/sample-apiserver/pkg/apis/wardle/v1alpha1.ReferenceType vs k8s.io/sample-apiserver/pkg/apis/wardle.ReferenceType)
+	// WARNING: in.ReferenceType requires manual conversion: inconvertible types (*github.com/jarrpa/cluster-config-service/pkg/apis/wardle/v1alpha1.ReferenceType vs github.com/jarrpa/cluster-config-service/pkg/apis/wardle.ReferenceType)
 	return nil
 }
 
 func autoConvert_wardle_FlunderSpec_To_v1alpha1_FlunderSpec(in *wardle.FlunderSpec, out *FlunderSpec, s conversion.Scope) error {
 	// WARNING: in.FlunderReference requires manual conversion: does not exist in peer-type
 	// WARNING: in.FischerReference requires manual conversion: does not exist in peer-type
-	// WARNING: in.ReferenceType requires manual conversion: inconvertible types (k8s.io/sample-apiserver/pkg/apis/wardle.ReferenceType vs *k8s.io/sample-apiserver/pkg/apis/wardle/v1alpha1.ReferenceType)
+	// WARNING: in.ReferenceType requires manual conversion: inconvertible types (github.com/jarrpa/cluster-config-service/pkg/apis/wardle.ReferenceType vs *github.com/jarrpa/cluster-config-service/pkg/apis/wardle/v1alpha1.ReferenceType)
 	return nil
 }
 

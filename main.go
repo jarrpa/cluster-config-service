@@ -1,5 +1,5 @@
 /*
-Copyright 2016 The Kubernetes Authors.
+Copyright 2022 Red Hat, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -19,13 +19,16 @@ package main
 import (
 	"os"
 
-	genericapiserver "k8s.io/apiserver/pkg/server"
+	"github.com/jarrpa/cluster-config-service/pkg/cmd/server"
+
+	api "github.com/jarrpa/ocs-operator/api/v1"
+	k8sapiserver "k8s.io/apiserver/pkg/server"
 	"k8s.io/component-base/cli"
-	"k8s.io/sample-apiserver/pkg/cmd/server"
 )
 
 func main() {
-	stopCh := genericapiserver.SetupSignalHandler()
+	_ = api.StorageCluster{}
+	stopCh := k8sapiserver.SetupSignalHandler()
 	options := server.NewWardleServerOptions(os.Stdout, os.Stderr)
 	cmd := server.NewCommandStartWardleServer(options, stopCh)
 	code := cli.Run(cmd)

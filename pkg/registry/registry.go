@@ -25,7 +25,7 @@ import (
 
 // REST implements a RESTStorage for API services against etcd
 type REST struct {
-	*genericregistry.Store
+	genericregistry.Store
 }
 
 // RESTInPeace is just a simple function that panics on error.
