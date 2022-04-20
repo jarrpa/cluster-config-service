@@ -41,10 +41,6 @@ bin/
 # Go workspace file
 go.work
 
-### Go Patch ###
-/vendor/
-/Godeps/
-
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
