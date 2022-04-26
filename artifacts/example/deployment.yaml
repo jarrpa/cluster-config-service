@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wardle-server
-  namespace: wardle
+#  namespace: wardle
   labels:
     apiserver: "true"
 spec:
@@ -17,10 +17,10 @@ spec:
     spec:
       serviceAccountName: apiserver
       containers:
-      - name: wardle-server
+      - name: apiserver
         # build from jarrpa/cluster-config-service/artifacts/simple-image/Dockerfile
-        image: cluster-config-service:latest
-        imagePullPolicy: Never
+        image: docker.io/jarrpa/cluster-config-service:latest
+        imagePullPolicy: IfNotPresent
         args: [ "--etcd-servers=http://localhost:2379" ]
       - name: etcd
         image: quay.io/coreos/etcd:v3.5.1
